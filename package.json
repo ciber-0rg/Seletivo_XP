@@ -1,0 +1,26 @@
+{
+  "name": "seletivo_xp",
+  "version": "1.0.0",
+  "description": "resolução do Desafio Técnico da XP para vaga de Software Engineer I - Back End",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ciber-0rg/Seletivo_XP.git"
+  },
+  "keywords": [
+    "tech",
+    "challenge",
+    "XP",
+    "back",
+    "end"
+  ],
+  "author": "Rudá Lemos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ciber-0rg/Seletivo_XP/issues"
+  },
+  "homepage": "https://github.com/ciber-0rg/Seletivo_XP#readme"
+}
