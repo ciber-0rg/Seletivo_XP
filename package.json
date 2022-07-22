@@ -2,9 +2,10 @@
   "name": "seletivo_xp",
   "version": "1.0.0",
   "description": "resolução do Desafio Técnico da XP para vaga de Software Engineer I - Back End",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node .",
+    "debug": "nodemon ."
   },
   "repository": {
     "type": "git",

@@ -1,8 +1,8 @@
 require('dotenv').config();
-const { response } = require('./app');
-const app = require('./app');
+const { response } = require('./server/app');
+const app = require('./server/app');
 
-const port = process.env.MYSQL_PORT || 3307;
+const port = process.env.MYSQL_PORT || 3306;
 
 app.get('/', (_req, res) => response.send());
 
