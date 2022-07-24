@@ -43,7 +43,8 @@ Caso não:
         "message": "No client registered under such data."
     }
 ```
-> A resposta do servidor será 404 Not Found.</br>
+> A resposta do servidor será 404 Not Found.
+</br>
 </details>
 
 <details>
@@ -57,7 +58,8 @@ Responsável por consultar o saldo do cliente especificado pelo ID:codCliente pr
         "saldo": 335.00  // saldo do cliente 1.
     }
 ```
-> A resposta do servidor será 200 OK. </br>
+> A resposta do servidor será 200 OK.
+</br>
 
 Caso não exista cliente relacionado a IDentificador da url, o retorno será:</br>
 ```javascript
@@ -114,14 +116,17 @@ Caso o codCliente faça referência a algum IDentificador cadastrado no sistema,
             "saldo": 535.00  // saldo pós-depósito.
         }
 ```
-> A resposta do servidor será 200 OK.</br>
+> A resposta do servidor será 200 OK.
+</br>
+
 Caso não, retorna:
 ```javascript
     {
         "message": "Client not found."
     }
 ```
-> A resposta do servidor será 404 Not Found.</br>
+> A resposta do servidor será 404 Not Found.
+</br>
 </details>
 
 <details>
@@ -136,15 +141,17 @@ Responsável por consultar todas as informações referentes ao ativo identifica
             "valor": "12.50" // preço de cada ação do ativo 65.
         }
 ```
-> A resposta do servidor será 200 OK.</br>
+> A resposta do servidor será 200 OK.
+</br>
+
 Caso o IDentificador não faça referência a algum ativo da corretora, o retorno será:
 ```javascript
     {
         "message": "No asset registered under this identifier."
     }
 ```
-> A resposta do servidor será 404 Not Found.</br>
-
+> A resposta do servidor será 404 Not Found.
+</br>
 
 **GET /cliente/:codCliente** </br>
 Responsável por consultar todos os ativos que o cliente de ID X, especificado na url, possui naquela corretora, retornando um array de objeto, como por exemplo:</br>
@@ -164,14 +171,17 @@ Responsável por consultar todos os ativos que o cliente de ID X, especificado n
             }
         ]
 ```
-> A resposta do servidor será 200 OK.</br>
+> A resposta do servidor será 200 OK.
+</br>
+
 Caso não exista cliente cadastrado sob tal IDentificador, o retorno será:
 ```javascript
     {
         "message": 'No assets found for this client.'
     }
 ```
-> A resposta do servidor será 404 Not Found.</br>
+> A resposta do servidor será 404 Not Found.
+</br>
 </details>
 
 <details>
@@ -187,6 +197,7 @@ Responsável por vender X ativos de determinado cliente de acordo com sua cartei
         }
 ```
 </br>
+
 Caso, a pessoa cliente em questão tenha a quantidade de ações em carteira para realizar o montante da venda, o retorno será:</br>
 
 ```javascript
@@ -194,15 +205,17 @@ Caso, a pessoa cliente em questão tenha a quantidade de ações em carteira par
             "message": "Assets sold!"
         }
 ```
-> A resposta do servidor será 200 OK.</br>
-Caso não:
+> A resposta do servidor será 200 OK.
+</br>
 
+Caso não:</br>
 ```javascript
         {
             "message": "Not enough assets to complete the sell."
         }
 ```
-> A resposta do servidor será 400 Bad Request.</br>
+> A resposta do servidor será 400 Bad Request.
+</br>
 
 **POST /comprar** </br>
 Responsável por comprar X ações de ativo X por determinado cliente. Recebe o seguinte objeto no body:<br/>
@@ -213,7 +226,32 @@ Responsável por comprar X ações de ativo X por determinado cliente. Recebe o 
             "qtdeAtivo": 100  // quantidade de ativos a serem comprados.
         }
 ```
-
-</details>
-
 </br>
+
+Caso o cliente possua saldo suficiente para comprar a quantidade que deseja **&&** a quantidade desejada esteja disponível em estoque para venda, o retorno é:
+```javascript
+    {
+        "message": "Your purchase has been successful. And you current balance is ${xxxx}."
+    }
+```
+> A resposta do servidor será 200 OK.
+</br>
+
+Caso o cliente não possua saldo suficiente para comprar a quantidade desejada, o retorno é:
+```javascript
+    {
+        "message": "Client does not have the required amount to finish this purchase."
+    }
+```
+> A resposta do servidor será 400 Bad Request.
+</br>
+
+Caso o cliente possua saldo suficiente para realizar a compra mas o ativo não tenha a quantidade desejada disponível para venda, o retorno será:
+```javascript
+    {
+        "message": "Not enough assets available for this purchase. Try a different amount."
+    }
+```
+> A resposta do servidor será 400 Bad Request.
+</br>
+</details>

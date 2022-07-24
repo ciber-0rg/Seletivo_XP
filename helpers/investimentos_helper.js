@@ -1,4 +1,5 @@
 const serviceAtivos = require('../services/ativos');
+const serviceContas = require('../services/contas');
 
 const check_updateAssetAmount = async (codAtivo, qtdeAtivo) => {
 
@@ -20,9 +21,16 @@ const updateClientAsset = async ({ codCliente, codAtivo, qtdeAtivo }) => {
     const clientAssetAfterPurchase = selectedAssetByClient.qtdeAtivo + qtdeAtivo;
 
     await serviceAtivos.updateAtivosByClient(codCliente, codAtivo, clientAssetAfterPurchase);
-}
+};
 
-/*const check_updateClientAssetAmount = async ({ codCliente, codAtivo, qtdeAtivo }) => {
+// const updateClientBalance = async (codCliente, newBalance) => {
+//     const [balance] = await serviceContas.updateBalance(codCliente, newBalance);
+
+//     return balance;
+// }
+
+/*
+const check_updateClientAssetAmount = async ({ codCliente, codAtivo, qtdeAtivo }) => {
     const [AllAssetsByClient] = await serviceAtivos.getAtivosByClient(codCliente);
 
     const [assetByClient] = AllAssetsByClient.filter((el) => el.codAtivo === codAtivo);
@@ -39,5 +47,5 @@ const updateClientAsset = async ({ codCliente, codAtivo, qtdeAtivo }) => {
 module.exports = {
  check_updateAssetAmount,
  updateClientAsset,
- /*check_updateClientAssetAmount,*/
+//  updateClientBalance,
 }
