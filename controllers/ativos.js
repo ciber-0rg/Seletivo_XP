@@ -12,7 +12,7 @@ module.exports = {
                 return res.status(200).json(ativos);
             }
 
-            return res.status(404).json({ message: 'Nothing found for this client.' });
+            return res.status(404).json({ message: 'No assets found for this client.' });
 
         } catch (error) {
             return res.status(500).json({ message: error.message });
@@ -29,7 +29,7 @@ module.exports = {
                 return res.status(200).json(ativos);
             }
 
-            return res.status(404).json({ message: 'Nothing found for this asset.' });
+            return res.status(404).json({ message: "No asset registered under this identifier." });
 
         } catch (error) {
             return res.status(500).json({ message: error.message });

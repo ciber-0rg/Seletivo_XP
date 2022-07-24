@@ -143,6 +143,15 @@ Responsável por consultar todas as informações referentes ao ativo identifica
 > A resposta do servidor será 200 OK.
 </br>
 
+Caso o IDentificador não faça referência a algum ativo da corretora, o retorno será:
+```javascript
+    {
+        "message": "No asset registered under this identifier."
+    }
+```
+> A resposta do servidor será 404 Not Found.
+</br>
+
 **GET /cliente/:codCliente** </br>
 Responsável por consultar todos os ativos que o cliente de ID X, especificado na url, possui naquela corretora, retornando um array de objeto, como por exemplo:</br>
 ```javascript
@@ -162,7 +171,17 @@ Responsável por consultar todos os ativos que o cliente de ID X, especificado n
         ]
 ```
 > A resposta do servidor será 200 OK.
-</details></br>
+</br>
+
+Caso não exista cliente cadastrado sob tal IDentificador, o retorno será:
+```javascript
+    {
+        "message": 'No assets found for this client.'
+    }
+```
+> A resposta do servidor será 404 Not Found.
+</br>
+</details>
 
 <details>
     <summary> <strong> /investimentos </strong> </summary> <br/>
