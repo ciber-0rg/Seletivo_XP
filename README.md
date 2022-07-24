@@ -6,7 +6,8 @@ repositório dedicado à resolução do Desafio Técnico Back End da XP Inc.
 O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas secundárias.
 Então, temos as rotas:
 
-1- /conta
+<details>
+    <summary> <strong> 1- /conta </strong> </summary> <br/>
 1.1- GET /:codCliente -> responsável por consultar o saldo do cliente especificado pelo ID:codCliente presente na url, retornando o seguinte objeto:
           {
               "codCliente": 1,    // ID do cliente.
@@ -18,6 +19,7 @@ Então, temos as rotas:
               "codCliente": 2, // IDentificador do cliente no database.
               "valor": 74.90  // valor a ser descontado_sacado da conta 2.
           }
+</details>
 
 1.3- POST /deposito  -> responsável por depositar um valor X no saldo do cliente, recebendo as informações necessárias pelo body:
           {
