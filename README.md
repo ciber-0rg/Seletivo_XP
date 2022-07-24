@@ -271,6 +271,10 @@ Os testes serão realizados em [Sinon](https://sinonjs.org/) e [Chai](https://ww
 </details>
 </br>
 
+Aqui você consegue ver o deploy da minha aplicação: https://processo-seletivo-xp-ruda.herokuapp.com/
+
+
+
 <details>
     <summary> <strong> English version </strong> </summary>
 
