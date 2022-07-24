@@ -1,6 +1,8 @@
 <detail>
 <summary><strong> Versão em Português</summary></strong>
 
+> You can find the English version at the bottom of the page!
+
 # Seletivo_XP
 Este repositório foi criado para a resolução do Desafio Técnico para vaga de Software Engineer I - Back End da XP Inc.
 
