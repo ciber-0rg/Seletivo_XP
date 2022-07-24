@@ -1,6 +1,12 @@
 const serviceLogin = require('../services/login');
 const { generateToken } = require('../helpers/JWTToken');
-
+/**
+ * login é controller que busca por todos os clientes no banco de dados
+ * confere se os dados de login conferem com os presentes no banco de dados
+ * conferindo, retorna status 200 e o token gerado
+ * o token tem duraçao de 1h de autorização
+ * o token gerado no momento de login é conferido em todos os endpoints
+ */
 module.exports = {
     login : async (req, res) => {
         try {

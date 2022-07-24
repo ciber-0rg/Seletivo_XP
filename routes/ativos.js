@@ -4,12 +4,17 @@ const authToken = require('../middlewares/authToken');
 
 const router = express.Router();
 
-//ok!
+/**
+ * authToken é o middleware de verificação do token
+ * getAtivos é o controller que solicita ao service o ativo que possui tal ID, no caso, codAtivo.
+ */
 router
     .route('/:codAtivo') //ativos
     .get(authToken, getAtivos);
 
-// ok!
+/**
+ * getAtivosByCliente é o controller que solicita ao service todos os ativos que tal cliente possui a partir da ID do cliente, neste caso, codCliente.
+ */
 router
     .route('/cliente/:codCliente') //cliente
     .get(authToken, getAtivosByClient);

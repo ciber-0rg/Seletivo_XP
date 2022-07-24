@@ -3,12 +3,17 @@ const authToken = require('../middlewares/authToken');
 const { sellAssets, buyAssets } = require('../controllers/investimentos');
 const router = express.Router();
 
-// ok!
+/**
+ * authToken é o middleware de verificação do token
+ * sellAssets é o controller que solicita ao service a  venda de ativos de certo cliente
+ */
 router
     .route('/vender')
     .post(authToken, sellAssets);
 
-// ok!
+/**
+ * buyAssets é o controller que solicita ao service a compra de ativos por certo cliente
+ */
 router
     .route('/comprar')
     .post(authToken, buyAssets);
