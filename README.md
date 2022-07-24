@@ -69,7 +69,8 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
 <details>
     <summary> <strong> /investimentos </strong> </summary> <br/></br>
 
-**POST /vender** -> responsável por vender X ativos de determinado cliente de acordo com sua carteira. Recebe o seguinte objeto no body:</br>
+**POST /vender** </br>
+Responsável por vender X ativos de determinado cliente de acordo com sua carteira. Recebe o seguinte objeto no body:</br>
 ```javascript
         {
             "codCliente": 1, // conta do cliente que vai vender os ativos.
@@ -78,7 +79,9 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
         }
 ```
 
-**POST /comprar** -> responsável por comprar X ações de ativo X por determinado cliente. Recebe o seguinte objeto no body:<br/>
+**POST /comprar** </br>
+
+Responsável por comprar X ações de ativo X por determinado cliente. Recebe o seguinte objeto no body:<br/>
  ```javascript
         {
             "codCliente": 1,  // IDentificador do cliente que realiza a compra.
@@ -95,7 +98,9 @@ Para cumprir com um dos requisito adicionais do Desafio Técnico, crio mais uma 
 <details>
     <summary> <strong> /login </strong> </summary> <br/></br>
 
-**POST /login** -> responsável por verificar a existência de cliente X no sistema da corretora e gerar um token de permissão para transações e navegação dentro da conta. Recebe o seguinte objeto no body::
+**POST /** </br>
+
+Responsável por verificar a existência de cliente X no sistema da corretora e gerar um token de permissão para transações e navegação dentro da conta. Recebe o seguinte objeto no body::
 ```javascript
     {
         "email": "joaosilva@gmail.com",
@@ -103,7 +108,8 @@ Para cumprir com um dos requisito adicionais do Desafio Técnico, crio mais uma 
     }
 ```
 </br>
-E retorna o token:
+
+ E retorna o token:
 
 ```javascript
     {
