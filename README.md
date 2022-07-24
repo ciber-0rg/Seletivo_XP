@@ -33,7 +33,7 @@ Responsável por verificar a existência de cliente X no sistema da corretora e 
     }
 ```
 
-> Este token deve ser utilizado em todas as rotas da aplicação na Key Authorization do Header.
+> Este token deve ser utilizado em todas as rotas da aplicação na Key Authorization do Header e possui validade de 1h. Após vencimento, é preciso realizar novo login para geraçãod de novo token.
 </details>
 </br>
 <details>
@@ -68,8 +68,6 @@ Responsável por depositar um valor X no saldo do cliente. Recebendo o seguinte 
         }
 ```
 </details></br>
-
-
 
 <details>
     <summary> <strong> /ativos </strong> </summary> <br/>
@@ -131,5 +129,3 @@ Responsável por comprar X ações de ativo X por determinado cliente. Recebe o 
 </details>
 
 </br>
-
-Para cumprir com um dos requisito adicionais do Desafio Técnico, crio mais uma rota, a rota de /login.</br>
