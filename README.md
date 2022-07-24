@@ -43,10 +43,8 @@ Caso não:
         "message": "No client registered under such data."
     }
 ```
-> A resposta do servidor será 404 Not Found.
-
+> A resposta do servidor será 404 Not Found.</br>
 </details>
-</br>
 
 <details>
     <summary> <strong> /conta </strong> </summary> <br/>
@@ -61,7 +59,7 @@ Responsável por consultar o saldo do cliente especificado pelo ID:codCliente pr
 ```
 > A resposta do servidor será 200 OK. </br>
 
-Caso não exista cliente relacionado a IDentificador da url, o retorno será:
+Caso não exista cliente relacionado a IDentificador da url, o retorno será:</br>
 ```javascript
     {
         "message": "Client not found."
@@ -116,17 +114,15 @@ Caso o codCliente faça referência a algum IDentificador cadastrado no sistema,
             "saldo": 535.00  // saldo pós-depósito.
         }
 ```
-> A resposta do servidor será 200 OK.
-</br>
-
+> A resposta do servidor será 200 OK.</br>
 Caso não, retorna:
 ```javascript
     {
         "message": "Client not found."
     }
 ```
-> A resposta do servidor será 404 Not Found.
-</details></br>
+> A resposta do servidor será 404 Not Found.</br>
+</details>
 
 <details>
     <summary> <strong> /ativos </strong> </summary> <br/>
@@ -140,17 +136,15 @@ Responsável por consultar todas as informações referentes ao ativo identifica
             "valor": "12.50" // preço de cada ação do ativo 65.
         }
 ```
-> A resposta do servidor será 200 OK.
-</br>
-
+> A resposta do servidor será 200 OK.</br>
 Caso o IDentificador não faça referência a algum ativo da corretora, o retorno será:
 ```javascript
     {
         "message": "No asset registered under this identifier."
     }
 ```
-> A resposta do servidor será 404 Not Found.
-</br>
+> A resposta do servidor será 404 Not Found.</br>
+
 
 **GET /cliente/:codCliente** </br>
 Responsável por consultar todos os ativos que o cliente de ID X, especificado na url, possui naquela corretora, retornando um array de objeto, como por exemplo:</br>
@@ -170,17 +164,14 @@ Responsável por consultar todos os ativos que o cliente de ID X, especificado n
             }
         ]
 ```
-> A resposta do servidor será 200 OK.
-</br>
-
+> A resposta do servidor será 200 OK.</br>
 Caso não exista cliente cadastrado sob tal IDentificador, o retorno será:
 ```javascript
     {
         "message": 'No assets found for this client.'
     }
 ```
-> A resposta do servidor será 404 Not Found.
-</br>
+> A resposta do servidor será 404 Not Found.</br>
 </details>
 
 <details>
@@ -203,7 +194,7 @@ Caso, a pessoa cliente em questão tenha a quantidade de ações em carteira par
             "message": "Assets sold!"
         }
 ```
-</br>
+> A resposta do servidor será 200 OK.</br>
 Caso não:
 
 ```javascript
@@ -211,6 +202,7 @@ Caso não:
             "message": "Not enough assets to complete the sell."
         }
 ```
+> A resposta do servidor será 400 Bad Request.</br>
 
 **POST /comprar** </br>
 Responsável por comprar X ações de ativo X por determinado cliente. Recebe o seguinte objeto no body:<br/>
@@ -221,6 +213,7 @@ Responsável por comprar X ações de ativo X por determinado cliente. Recebe o 
             "qtdeAtivo": 100  // quantidade de ativos a serem comprados.
         }
 ```
+
 </details>
 
 </br>
