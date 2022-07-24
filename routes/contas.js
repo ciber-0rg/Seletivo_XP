@@ -17,6 +17,6 @@ router
 // ok!
 router
     .route('/deposito')
-    .post(authToken, validate.withdrawal, deposito);
+    .post(authToken, validate.withdrawal, deposit);
 
 module.exports = router;
