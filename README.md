@@ -8,7 +8,7 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
 <details>
     <summary> <strong> /conta </strong> </summary> <br/>
 
-**GET /conta/:codCliente** -> responsável por consultar o saldo do cliente especificado pelo ID:codCliente presente na url, retornando o seguinte objeto:<br/>
+**GET /:codCliente** -> responsável por consultar o saldo do cliente especificado pelo ID:codCliente presente na url, retornando o seguinte objeto:<br/>
 ```javascript
         {
             "codCliente": 1,    // ID do cliente.
@@ -16,7 +16,7 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
         }
 ```
 
-**POST /conta/saque** -> responsável por descontar um valor X do saldo do cliente. Recebendo o seguinte objeto no body:<br/>
+**POST /saque** -> responsável por descontar um valor X do saldo do cliente. Recebendo o seguinte objeto no body:<br/>
 ```javascript
         {
             "codCliente": 2, // IDentificador do cliente no database.
@@ -24,7 +24,7 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
         }
 ```
 
-**POST conta/deposito**  -> responsável por depositar um valor X no saldo do cliente. Recebendo o seguinte objeto no body:</br>
+**POST /deposito**  -> responsável por depositar um valor X no saldo do cliente. Recebendo o seguinte objeto no body:</br>
 ```javascript
         {
             "codCliente": 3, // IDentificador do cliente no database.
@@ -38,7 +38,7 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
 <details>
     <summary> <strong> /ativos </strong> </summary> <br/></br>
 
-**GET /ativos/:codAtivo** -> responsável por consultar todas as informações referentes ao ativo identificado na url. </br>
+**GET /:codAtivo** -> responsável por consultar todas as informações referentes ao ativo identificado na url. </br>
 ```javascript
         {
             "codAtivo": 65,  // IDentificador do ativo.
@@ -47,7 +47,7 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
         }
 ```
 
-**GET ativos/cliente/:codCliente** -> responsável por consultar todos os ativos que o cliente de ID X, especificado na url, possui naquela corretora, retornando um array de objeto, como por exemplo:</br>
+**GET /cliente/:codCliente** -> responsável por consultar todos os ativos que o cliente de ID X, especificado na url, possui naquela corretora, retornando um array de objeto, como por exemplo:</br>
 ```javascript
         [
             {
@@ -69,7 +69,7 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
 <details>
     <summary> <strong> /investimentos </strong> </summary> <br/></br>
 
-**POST /investimentos/vender** -> responsável por vender X ativos de determinado cliente de acordo com sua carteira. Recebe o seguinte objeto no body:</br>
+**POST /vender** -> responsável por vender X ativos de determinado cliente de acordo com sua carteira. Recebe o seguinte objeto no body:</br>
 ```javascript
         {
             "codCliente": 1, // conta do cliente que vai vender os ativos.
@@ -78,7 +78,7 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
         }
 ```
 
-**POST /investimentos/comprar** -> responsável por comprar X ações de ativo X por determinado cliente. Recebe o seguinte objeto no body:<br/>
+**POST /comprar** -> responsável por comprar X ações de ativo X por determinado cliente. Recebe o seguinte objeto no body:<br/>
  ```javascript
         {
             "codCliente": 1,  // IDentificador do cliente que realiza a compra.
