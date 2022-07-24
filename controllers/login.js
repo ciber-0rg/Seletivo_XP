@@ -12,6 +12,8 @@ module.exports = {
         try {
         const client = await serviceLogin.login(req.body);
 
+        console.log(client[0]);
+
         if (!client) {
             return res.status(404).json({ message: 'No client registered under such datas.' });
         }
