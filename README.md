@@ -4,11 +4,11 @@ repositório dedicado à resolução do Desafio Técnico Back End da XP Inc.
 # Explicação
 
 Esta é uma aplicação back end em Javascript.</br>
-Utilizando [NodeJS](https://https://nodejs.org/en/about/) & ExpressJS.
-O sistema de gerenciamento de banco de dados é MySQL.
-O validador de dados é Joi.
-A biblioteca Nodemon é usada para reinício automático do servidor.
-O método de autenticação de dados é JWT.
+Utilizando [NodeJS](https://nodejs.org/en/about/) & [ExpressJS] (https://expressjs.com/pt-br/).
+O sistema de gerenciamento de banco de dados é [MySQL] (https://www.mysql.com/).
+O validador de dados é [Joi] (https://joi.dev/).
+A biblioteca [Nodemon](https://nodemon.io/) é usada para reinício automático do servidor.
+O método de autenticação de dados é [JWT] (https://jwt.io/).
 
 
 
