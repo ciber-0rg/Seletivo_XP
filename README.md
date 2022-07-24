@@ -10,9 +10,32 @@ O validador de dados é [Joi](https://joi.dev/).</br>
 A biblioteca [Nodemon](https://nodemon.io/) é usada para reinício automático do servidor.</br>
 O método de autenticação de dados é [JWT](https://jwt.io/).</br>
 
+A aplicação possui 4 rotas principais e outras rotas secundárias. </br>
 
 
+<details>
+    <summary> <strong> /login </strong> </summary> <br/>
 
+**POST /** </br>
+Responsável por verificar a existência de cliente X no sistema da corretora e gerar um token de permissão para transações e navegação dentro da conta. Recebe o seguinte objeto no body::
+```javascript
+    {
+        "email": "joaosilva@gmail.com",
+        "password": "12345678"
+    }
+```
+</br>
+ E retorna o token:
+
+```javascript
+    {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvYW9zaWx2YUBnbWFpbC5jb20iLCJzZW5oYSI6IjM0NTU2Nzg4IiwiaWF0IjoxNjU4Njg3NDA2LCJleHAiOjE2NTg2OTEwMDZ9.tgvirutyh2yZRAaJY90TLgDzNNiDwAgfFvzh2AqbPpU"
+    }
+```
+
+> Este token deve ser utilizado em todas as rotas da aplicação na Key Authorization do Header.
+</details>
+</br>
 <details>
     <summary> <strong> /conta </strong> </summary> <br/>
 
@@ -110,28 +133,3 @@ Responsável por comprar X ações de ativo X por determinado cliente. Recebe o 
 </br>
 
 Para cumprir com um dos requisito adicionais do Desafio Técnico, crio mais uma rota, a rota de /login.</br>
-
-<details>
-    <summary> <strong> /login </strong> </summary> <br/>
-
-**POST /** </br>
-Responsável por verificar a existência de cliente X no sistema da corretora e gerar um token de permissão para transações e navegação dentro da conta. Recebe o seguinte objeto no body::
-```javascript
-    {
-        "email": "joaosilva@gmail.com",
-        "password": "12345678"
-    }
-```
-</br>
- E retorna o token:
-
-```javascript
-    {
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvYW9zaWx2YUBnbWFpbC5jb20iLCJzZW5oYSI6IjM0NTU2Nzg4IiwiaWF0IjoxNjU4Njg3NDA2LCJleHAiOjE2NTg2OTEwMDZ9.tgvirutyh2yZRAaJY90TLgDzNNiDwAgfFvzh2AqbPpU"
-    }
-```
-
-> Este token deve ser utilizado em todas as rotas da aplicação na Key Authorization do Header.
-
-
-</details>
