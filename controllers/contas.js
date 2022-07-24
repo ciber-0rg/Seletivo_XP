@@ -22,6 +22,9 @@ module.exports = {
             const { codCliente, valor } = req.body;
 
             const [balance] = await serviceConta.getBalance(codCliente);
+            if (!balance) {
+                return res.status(404).json({ message: 'Client not found.' });
+            }
             const saldo = parseFloat(balance.saldo);
             const newSaldo = saldo - valor;
 

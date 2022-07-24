@@ -32,7 +32,7 @@ Caso as informações de login estejam cadastradas a alguma pessoa cliente prese
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvYW9zaWx2YUBnbWFpbC5jb20iLCJzZW5oYSI6IjM0NTU2Nzg4IiwiaWF0IjoxNjU4Njg3NDA2LCJleHAiOjE2NTg2OTEwMDZ9.tgvirutyh2yZRAaJY90TLgDzNNiDwAgfFvzh2AqbPpU"
     }
 ```
-> A resposta do servidor será 200 OK.
+> A resposta do servidor será 200 OK.</br>
 > Este token deve ser utilizado em todas as rotas da aplicação na Key Authorization do Header e possui validade de 1h. Após vencimento, é preciso realizar novo login para geração de novo token.
 </br>
 
@@ -80,7 +80,7 @@ Responsável por descontar um valor X do saldo do cliente. Recebendo o seguinte 
 ```
 </br>
 
-Retorna o saldo atualizado do cliente após saque:</br>
+Caso o valor a ser sacado esteja disponível em conta, retorna o saldo atualizado do cliente após saque:</br>
 ```javascript
         {
             "codCliente": 2, // IDentificador do cliente no database.
@@ -88,6 +88,15 @@ Retorna o saldo atualizado do cliente após saque:</br>
         }
 ```
 > A resposta do servidor será 200 OK.
+</br>
+
+Caso nao: </br>
+```javascript
+    {
+        "message": "Not enough funds."
+    }
+```
+> A resposta do servidor será 400 Bad Request.
 </br>
 
 **POST /deposito**  </br>
