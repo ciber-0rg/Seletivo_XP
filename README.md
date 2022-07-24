@@ -7,18 +7,18 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
 Então, temos as rotas:
 
 <details>
-    <summary> <strong> 1- /conta </strong> </summary> <br/>
-1.1- GET /:codCliente -> responsável por consultar o saldo do cliente especificado pelo ID:codCliente presente na url, retornando o seguinte objeto:
+    <summary> <strong> 1. /conta </strong> </summary> <br/>
+1.1. GET /:codCliente -> responsável por consultar o saldo do cliente especificado pelo ID:codCliente presente na url, retornando o seguinte objeto:<br/>
           {<br/>
-              "codCliente": 1,    // ID do cliente.
-              "saldo": "1475.00"  // saldo do cliente 1.
-          }
+              "codCliente": 1,    // ID do cliente. <br/>
+              "saldo": "1475.00"  // saldo do cliente 1.<br/>
+          }<br/>
 
-1.2- POST /saque -> responsável por descontar um valor X do saldo do cliente, recebendo as informações necessárias pelo body:
-          {
-              "codCliente": 2, // IDentificador do cliente no database.
-              "valor": 74.90  // valor a ser descontado_sacado da conta 2.
-          }
+1.2. POST /saque -> responsável por descontar um valor X do saldo do cliente, recebendo as informações necessárias pelo body:<br/>
+          {<br/>
+              "codCliente": 2, // IDentificador do cliente no database.<br/>
+              "valor": 74.90  // valor a ser descontado_sacado da conta 2.<br/>
+          }<br/>
 </details>
 
 1.3- POST /deposito  -> responsável por depositar um valor X no saldo do cliente, recebendo as informações necessárias pelo body:
