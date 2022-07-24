@@ -6,7 +6,7 @@
 # Seletivo_XP
 Este repositório foi criado para a resolução do Desafio Técnico para vaga de Software Engineer I - Back End da XP Inc.
 
-# Explicação
+# Apresentação
 
 Esta é uma aplicação em Javascript.</br>
 Utilizando [NodeJS](https://nodejs.org/en/about/) & [ExpressJS](https://expressjs.com/pt-br/).</br>
@@ -277,7 +277,7 @@ Os testes serão realizados em [Sinon](https://sinonjs.org/) e [Chai](https://ww
 # Selection_XP
 This repository contains the solution created to compete for a Software Engineer I - Back End vacancy at XP Inc.
 
-# Explicação
+# Presentation
 
 
 This is a Javascript application.</br>
