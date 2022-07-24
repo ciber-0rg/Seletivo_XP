@@ -16,7 +16,7 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
         }
 ```
 
-**POST /conta/saque** -> responsável por descontar um valor X do saldo do cliente, recebendo as informações necessárias pelo body:<br/>
+**POST /conta/saque** -> responsável por descontar um valor X do saldo do cliente. Recebendo o seguinte objeto no body:<br/>
 ```javascript
         {
             "codCliente": 2, // IDentificador do cliente no database.
@@ -24,7 +24,7 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
         }
 ```
 
-**POST conta/deposito**  -> responsável por depositar um valor X no saldo do cliente, recebendo as informações necessárias pelo body:
+**POST conta/deposito**  -> responsável por depositar um valor X no saldo do cliente. Recebendo o seguinte objeto no body:</br>
 ```javascript
         {
             "codCliente": 3, // IDentificador do cliente no database.
@@ -47,7 +47,7 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
         }
 ```
 
-**GET ativos/cliente/:codCliente** -> responsável por consulta todos os ativos que o cliente de ID X possui naquela corretora, retornando um array de objeto, como por exemplo:</br>
+**GET ativos/cliente/:codCliente** -> responsável por consultar todos os ativos que o cliente de ID X, especificado na url, possui naquela corretora, retornando um array de objeto, como por exemplo:</br>
 ```javascript
         [
             {
@@ -69,7 +69,7 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
 <details>
     <summary> <strong> /investimentos </strong> </summary> <br/></br>
 
-**POST /investimentos/vender** -> responsável por vender X ativos de determinado cliente de acordo com sua carteira. Recebe o objeto:</br>
+**POST /investimentos/vender** -> responsável por vender X ativos de determinado cliente de acordo com sua carteira. Recebe o seguinte objeto no body:</br>
 ```javascript
         {
             "codCliente": 1, // conta do cliente que vai vender os ativos.
@@ -78,7 +78,7 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
         }
 ```
 
-**POST /investimentos/comprar** -> responsável por comprar X ações de ativo X por determinado cliente.<br/>
+**POST /investimentos/comprar** -> responsável por comprar X ações de ativo X por determinado cliente. Recebe o seguinte objeto no body:<br/>
  ```javascript
         {
             "codCliente": 1,  // IDentificador do cliente que realiza a compra.
@@ -95,7 +95,7 @@ Para cumprir com um dos requisito adicionais do Desafio Técnico, crio mais uma 
 <details>
     <summary> <strong> /login </strong> </summary> <br/></br>
 
-**POST /login** -> responsável por verificar a existência de cliente X no sistema da corretora e gerar um token de permissão para transações e navegação dentro da conta. Recebe no body o objeto:
+**POST /login** -> responsável por verificar a existência de cliente X no sistema da corretora e gerar um token de permissão para transações e navegação dentro da conta. Recebe o seguinte objeto no body::
 ```javascript
     {
         "email": "joaosilva@gmail.com",
@@ -111,7 +111,7 @@ E retorna o token:
     }
 ```
 
-Este token deve ser utilizado em todas as da aplicação na Key Authorization do Header.
+> Este token deve ser utilizado em todas as rotas da aplicação na Key Authorization do Header.
 
 
 </details>
