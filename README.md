@@ -16,6 +16,7 @@ Responsável por consultar o saldo do cliente especificado pelo ID:codCliente pr
             "saldo": "1475.00"  // saldo do cliente 1.
         }
 ```
+</br>
 
 **POST /saque** </br>
 Responsável por descontar um valor X do saldo do cliente. Recebendo o seguinte objeto no body:<br/>
