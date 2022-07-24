@@ -33,9 +33,10 @@ Responsável por verificar a existência de cliente X no sistema da corretora e 
     }
 ```
 
-> Este token deve ser utilizado em todas as rotas da aplicação na Key Authorization do Header e possui validade de 1h. Após vencimento, é preciso realizar novo login para geraçãod de novo token.
+> Este token deve ser utilizado em todas as rotas da aplicação na Key Authorization do Header e possui validade de 1h. Após vencimento, é preciso realizar novo login para geração de novo token.
 </details>
 </br>
+
 <details>
     <summary> <strong> /conta </strong> </summary> <br/>
 
@@ -44,7 +45,7 @@ Responsável por consultar o saldo do cliente especificado pelo ID:codCliente pr
 ```javascript
         {
             "codCliente": 1,    // ID do cliente.
-            "saldo": "1475.00"  // saldo do cliente 1.
+            "saldo": 335.00  // saldo do cliente 1.
         }
 ```
 </br>
@@ -53,8 +54,17 @@ Responsável por consultar o saldo do cliente especificado pelo ID:codCliente pr
 Responsável por descontar um valor X do saldo do cliente. Recebendo o seguinte objeto no body:<br/>
 ```javascript
         {
+            "codCliente": 1, // IDentificador do cliente no database.
+            "valor": 100.00  // valor a ser descontado_sacado da conta 2.
+        }
+```
+</br>
+
+E retorna o saldo atualizado do cliente após saque:</br>
+```javascript
+        {
             "codCliente": 2, // IDentificador do cliente no database.
-            "valor": 74.90  // valor a ser descontado_sacado da conta 2.
+            "saldo": 235.00  // saldo da conta pós-saque
         }
 ```
 </br>
@@ -63,8 +73,17 @@ Responsável por descontar um valor X do saldo do cliente. Recebendo o seguinte 
 Responsável por depositar um valor X no saldo do cliente. Recebendo o seguinte objeto no body:</br>
 ```javascript
         {
-            "codCliente": 3, // IDentificador do cliente no database.
-            "valor": 225.30  // valor a ser depositado na conta 3.
+            "codCliente": 1, // IDentificador do cliente no database.
+            "valor": 300.00  // valor a ser depositado na conta 3.
+        }
+```
+</br>
+
+E retorna o saldo atualizado do cliente após depósito: </br>
+```javascript
+        {
+            "codCliente": 1, // IDentificador do cliente no database.
+            "saldo": 535.00  // saldo pós-depósito.
         }
 ```
 </details></br>
