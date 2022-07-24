@@ -109,7 +109,7 @@ Responsável por depositar um valor X no saldo do cliente. Recebendo o seguinte 
 ```
 </br>
 
-Retorna o saldo atualizado do cliente após depósito: </br>
+Caso o codCliente faça referência a algum IDentificador cadastrado no sistema, retorna o saldo atualizado do cliente após depósito: </br>
 ```javascript
         {
             "codCliente": 1, // IDentificador do cliente no database.
@@ -118,6 +118,14 @@ Retorna o saldo atualizado do cliente após depósito: </br>
 ```
 > A resposta do servidor será 200 OK.
 </br>
+
+Caso não, retorna:
+```javascript
+    {
+        "message": "Client not found."
+    }
+```
+> A resposta do servidor será 404 Not Found.
 </details></br>
 
 <details>
