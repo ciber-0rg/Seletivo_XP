@@ -8,7 +8,7 @@ const investimentos = require('./investimentos');
 const ativos = require('./ativos');
 
 router.use('/login', login);
-router.use('/contas', contas);
+router.use('/conta', contas);
 router.use('/investimentos', investimentos);
 router.use('/ativos', ativos);
 
