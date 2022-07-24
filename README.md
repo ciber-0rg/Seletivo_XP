@@ -25,6 +25,7 @@ Responsável por descontar um valor X do saldo do cliente. Recebendo o seguinte 
             "valor": 74.90  // valor a ser descontado_sacado da conta 2.
         }
 ```
+</br>
 
 **POST /deposito**  </br>
 Responsável por depositar um valor X no saldo do cliente. Recebendo o seguinte objeto no body:</br>
@@ -39,7 +40,7 @@ Responsável por depositar um valor X no saldo do cliente. Recebendo o seguinte 
 
 
 <details>
-    <summary> <strong> /ativos </strong> </summary> <br/></br>
+    <summary> <strong> /ativos </strong> </summary> <br/>
 
 **GET /:codAtivo** </br>
 Responsável por consultar todas as informações referentes ao ativo identificado na url. </br>
@@ -50,6 +51,7 @@ Responsável por consultar todas as informações referentes ao ativo identifica
             "valor": "12.50" // preço de cada ação do ativo 65.
         }
 ```
+</br>
 
 **GET /cliente/:codCliente** </br>
 Responsável por consultar todos os ativos que o cliente de ID X, especificado na url, possui naquela corretora, retornando um array de objeto, como por exemplo:</br>
@@ -72,7 +74,7 @@ Responsável por consultar todos os ativos que o cliente de ID X, especificado n
 </details></br>
 
 <details>
-    <summary> <strong> /investimentos </strong> </summary> <br/></br>
+    <summary> <strong> /investimentos </strong> </summary> <br/>
 
 **POST /vender** </br>
 Responsável por vender X ativos de determinado cliente de acordo com sua carteira. Recebe o seguinte objeto no body:</br>
@@ -101,7 +103,7 @@ Responsável por comprar X ações de ativo X por determinado cliente. Recebe o 
 Para cumprir com um dos requisito adicionais do Desafio Técnico, crio mais uma rota, a rota de /login.</br>
 
 <details>
-    <summary> <strong> /login </strong> </summary> <br/></br>
+    <summary> <strong> /login </strong> </summary> <br/>
 
 **POST /** </br>
 Responsável por verificar a existência de cliente X no sistema da corretora e gerar um token de permissão para transações e navegação dentro da conta. Recebe o seguinte objeto no body::
@@ -112,7 +114,6 @@ Responsável por verificar a existência de cliente X no sistema da corretora e 
     }
 ```
 </br>
-
  E retorna o token:
 
 ```javascript
