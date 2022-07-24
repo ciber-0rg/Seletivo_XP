@@ -1,19 +1,20 @@
 const express = require('express');
+const authToken = require('../middlewares/authToken');
 
 const router = express.Router();
 
 router
     .route('/:codCliente')
-    .get();
+    .get(authToken);
 
 // ok!
 router
     .route('/saque')
-    .post();
+    .post(authToken);
 
 // ok!
 router
-    .route('/conta/deposito')
-    .post();
+    .route('/deposito')
+    .post(authToken);
 
 module.exports = router;
