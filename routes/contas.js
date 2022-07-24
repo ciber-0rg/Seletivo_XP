@@ -1,6 +1,8 @@
 const express = require('express');
 const authToken = require('../middlewares/authToken');
 const { getBalance, withdrawal, deposit } = require('../controllers/contas');
+const validate = require('../middlewares/validation');
+
 const router = express.Router();
 
 router
@@ -10,11 +12,11 @@ router
 // ok!
 router
     .route('/saque')
-    .post(authToken, withdrawal);
+    .post(authToken, validate.withdrawal, withdrawal);
 
 // ok!
 router
     .route('/deposito')
-    .post(authToken, deposit);
+    .post(authToken, validate.withdrawal, deposito);
 
 module.exports = router;
