@@ -1,7 +1,6 @@
 const serviceAtivos = require('../services/ativos');
 
 module.exports = {
-
     getAtivosByClient: async (req, res) => {
         try {
             const { codCliente } = req.params;
