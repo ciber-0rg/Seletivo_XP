@@ -4,7 +4,6 @@ repositório dedicado à resolução do Desafio Técnico Back End da XP Inc.
 # Explicação
 
 O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas secundárias.
-Então, temos as rotas:
 
 <details>
     <summary> <strong> /conta </strong> </summary> <br/>
@@ -32,7 +31,7 @@ Então, temos as rotas:
             "valor": 225.30  // valor a ser depositado na conta 3.
         }
 ```
-</details>
+</details></br>
 
 
 
@@ -65,7 +64,7 @@ Então, temos as rotas:
             }
         ]
 ```
-</details>
+</details></br>
 
 <details>
     <summary> <strong> /investimentos </strong> </summary> <br/></br>
@@ -89,7 +88,6 @@ Então, temos as rotas:
 ```
 </details>
 
-</br>
 </br>
 </br>
 
