@@ -3,7 +3,7 @@ repositório dedicado à resolução do Desafio Técnico Back End da XP Inc.
 
 # Explicação
 
-O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas secundárias.
+O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas secundárias.</br>
 
 <details>
     <summary> <strong> /conta </strong> </summary> <br/>
@@ -88,7 +88,6 @@ O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas
 ```
 </details>
 
-</br>
 </br>
 
 Para cumprir com um dos requisito adicionais do Desafio Técnico, crio mais uma rota, a rota de /login.</br>
