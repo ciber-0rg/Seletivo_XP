@@ -25,7 +25,7 @@ Então, temos as rotas:
         }
 ```
 
-**POST /deposito**  -> responsável por depositar um valor X no saldo do cliente, recebendo as informações necessárias pelo body:
+**POST conta/deposito**  -> responsável por depositar um valor X no saldo do cliente, recebendo as informações necessárias pelo body:
 ```javascript
         {
             "codCliente": 3, // IDentificador do cliente no database.
@@ -70,7 +70,7 @@ Então, temos as rotas:
 <details>
     <summary> <strong> /investimentos </strong> </summary> <br/></br>
 
-**POST /vender** -> responsável por vender X ativos de determinado cliente de acordo com sua carteira. Recebe o objeto:</br>
+**POST /investimentos/vender** -> responsável por vender X ativos de determinado cliente de acordo com sua carteira. Recebe o objeto:</br>
 ```javascript
         {
             "codCliente": 1, // conta do cliente que vai vender os ativos.
@@ -79,7 +79,7 @@ Então, temos as rotas:
         }
 ```
 
-**POST /comprar** -> responsável por comprar X ações de ativo X por determinado cliente.<br/>
+**POST /investimentos/comprar** -> responsável por comprar X ações de ativo X por determinado cliente.<br/>
  ```javascript
         {
             "codCliente": 1,  // IDentificador do cliente que realiza a compra.
@@ -87,4 +87,34 @@ Então, temos as rotas:
             "qtdeAtivo": 100  // quantidade de ativos a serem comprados.
         }
 ```
+</details>
+
+</br>
+</br>
+</br>
+
+Para cumprir com um dos requisito adicionais do Desafio Técnico, crio mais uma rota, a rota de /login.</br>
+
+<details>
+    <summary> <strong> /login </strong> </summary> <br/></br>
+
+**POST /login** -> responsável por verificar a existência de cliente X no sistema da corretora e gerar um token de permissão para transações e navegação dentro da conta. Recebe no body o objeto:
+```javascript
+    {
+        "email": "joaosilva@gmail.com",
+        "password": "12345678"
+    }
+```
+</br>
+E retorna o token:
+
+```javascript
+    {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvYW9zaWx2YUBnbWFpbC5jb20iLCJzZW5oYSI6IjM0NTU2Nzg4IiwiaWF0IjoxNjU4Njg3NDA2LCJleHAiOjE2NTg2OTEwMDZ9.tgvirutyh2yZRAaJY90TLgDzNNiDwAgfFvzh2AqbPpU"
+    }
+```
+
+Este token deve ser utilizado em todas as da aplicação na Key Authorization do Header.
+
+
 </details>
