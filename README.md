@@ -25,15 +25,26 @@ Responsável por verificar a existência de cliente X no sistema da corretora e 
     }
 ```
 </br>
- E retorna o token:
+Caso as informações de login estejam cadastradas a alguma pessoa cliente presente no banco de dados, o login é feito e o token será retornado:
 
 ```javascript
     {
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvYW9zaWx2YUBnbWFpbC5jb20iLCJzZW5oYSI6IjM0NTU2Nzg4IiwiaWF0IjoxNjU4Njg3NDA2LCJleHAiOjE2NTg2OTEwMDZ9.tgvirutyh2yZRAaJY90TLgDzNNiDwAgfFvzh2AqbPpU"
     }
 ```
-
+> A resposta do servidor será 200 OK.
 > Este token deve ser utilizado em todas as rotas da aplicação na Key Authorization do Header e possui validade de 1h. Após vencimento, é preciso realizar novo login para geração de novo token.
+</br>
+
+Caso não:
+
+```javascript
+    {
+        "message": "No client registered under such data."
+    }
+```
+> A resposta do servidor será 404 Not Found.
+
 </details>
 </br>
 
@@ -41,13 +52,22 @@ Responsável por verificar a existência de cliente X no sistema da corretora e 
     <summary> <strong> /conta </strong> </summary> <br/>
 
 **GET /:codCliente** </br>
-Responsável por consultar o saldo do cliente especificado pelo ID:codCliente presente na url, retornando o seguinte objeto:<br/>
+Responsável por consultar o saldo do cliente especificado pelo ID:codCliente presente na url, caso o codCliente exista no bando de dados, retornará o seguinte objeto:<br/>
 ```javascript
-        {
-            "codCliente": 1,    // ID do cliente.
-            "saldo": 335.00  // saldo do cliente 1.
-        }
+    {
+        "codCliente": 1,    // ID do cliente.
+        "saldo": 335.00  // saldo do cliente 1.
+    }
 ```
+> A resposta do servidor será 200 OK. </br>
+
+Caso não exista cliente relacionado a IDentificador da url, o retorno será:
+```javascript
+    {
+        "message": "Client not found."
+    }
+```
+> A resposta do servidor será 404 Not Found.
 </br>
 
 **POST /saque** </br>
@@ -55,18 +75,19 @@ Responsável por descontar um valor X do saldo do cliente. Recebendo o seguinte 
 ```javascript
         {
             "codCliente": 1, // IDentificador do cliente no database.
-            "valor": 100.00  // valor a ser descontado_sacado da conta 2.
+            "valor": 100.00  // valor a ser descontado_sacado da conta do cliente 1.
         }
 ```
 </br>
 
-E retorna o saldo atualizado do cliente após saque:</br>
+Retorna o saldo atualizado do cliente após saque:</br>
 ```javascript
         {
             "codCliente": 2, // IDentificador do cliente no database.
             "saldo": 235.00  // saldo da conta pós-saque
         }
 ```
+> A resposta do servidor será 200 OK.
 </br>
 
 **POST /deposito**  </br>
@@ -74,18 +95,20 @@ Responsável por depositar um valor X no saldo do cliente. Recebendo o seguinte 
 ```javascript
         {
             "codCliente": 1, // IDentificador do cliente no database.
-            "valor": 300.00  // valor a ser depositado na conta 3.
+            "valor": 300.00  // valor a ser depositado na conta do cliente 1.
         }
 ```
 </br>
 
-E retorna o saldo atualizado do cliente após depósito: </br>
+Retorna o saldo atualizado do cliente após depósito: </br>
 ```javascript
         {
             "codCliente": 1, // IDentificador do cliente no database.
             "saldo": 535.00  // saldo pós-depósito.
         }
 ```
+> A resposta do servidor será 200 OK.
+</br>
 </details></br>
 
 <details>
@@ -100,6 +123,7 @@ Responsável por consultar todas as informações referentes ao ativo identifica
             "valor": "12.50" // preço de cada ação do ativo 65.
         }
 ```
+> A resposta do servidor será 200 OK.
 </br>
 
 **GET /cliente/:codCliente** </br>
@@ -120,6 +144,7 @@ Responsável por consultar todos os ativos que o cliente de ID X, especificado n
             }
         ]
 ```
+> A resposta do servidor será 200 OK.
 </details></br>
 
 <details>
@@ -135,6 +160,21 @@ Responsável por vender X ativos de determinado cliente de acordo com sua cartei
         }
 ```
 </br>
+Caso, a pessoa cliente em questão tenha a quantidade de ações em carteira para realizar o montante da venda, o retorno será:</br>
+
+```javascript
+        {
+            "message": "Assets sold!"
+        }
+```
+</br>
+Caso não:
+
+```javascript
+        {
+            "message": "Not enough assets to complete the sell."
+        }
+```
 
 **POST /comprar** </br>
 Responsável por comprar X ações de ativo X por determinado cliente. Recebe o seguinte objeto no body:<br/>

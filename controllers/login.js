@@ -14,7 +14,7 @@ module.exports = {
 
         console.log(client[0]);
 
-        if (!client) {
+        if (client[0].length === 0) {
             return res.status(404).json({ message: 'No client registered under such datas.' });
         }
 

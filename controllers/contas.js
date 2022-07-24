@@ -6,7 +6,8 @@ module.exports = {
             const { codCliente } = req.params;
             const [balance] = await serviceConta.getBalance(codCliente);
 
-            if (balance.length === 0) {
+            console.log(balance);
+            if (!balance) {
                 return res.status(404).json({ message: 'Client not found.' });
             }
             return res.status(200).json(balance);
