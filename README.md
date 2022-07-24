@@ -11,18 +11,18 @@ Então, temos as rotas:
 
 **GET /conta/:codCliente** -> responsável por consultar o saldo do cliente especificado pelo ID:codCliente presente na url, retornando o seguinte objeto:<br/>
                     ```javascript
-                            {
+                            {</br>
                                 "codCliente": 1,    // ID do cliente.
                                 "saldo": "1475.00"  // saldo do cliente 1.
-                            }
+                            }</br>
                     ```
 
 **POST /conta/saque** -> responsável por descontar um valor X do saldo do cliente, recebendo as informações necessárias pelo body:<br/>
                     ```javascript
-                            {
+                            {</br>
                                 "codCliente": 2, // IDentificador do cliente no database.
                                 "valor": 74.90  // valor a ser descontado_sacado da conta 2.
-                            }
+                            }</br>
                     ```
 </details>
 
