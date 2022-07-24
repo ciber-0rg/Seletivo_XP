@@ -3,7 +3,15 @@ repositório dedicado à resolução do Desafio Técnico Back End da XP Inc.
 
 # Explicação
 
-O Desafio requeria a realização de 3 rotas principais e suas respectivas rotas secundárias.</br>
+Esta é uma aplicação back end em Javascript.</br>
+Utilizando [NodeJS](https://https://nodejs.org/en/about/) & ExpressJS.
+O sistema de gerenciamento de banco de dados é MySQL.
+O validador de dados é Joi.
+A biblioteca Nodemon é usada para reinício automático do servidor.
+O método de autenticação de dados é JWT.
+
+
+
 
 <details>
     <summary> <strong> /conta </strong> </summary> <br/>
