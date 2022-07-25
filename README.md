@@ -275,6 +275,7 @@ Aqui você consegue ver o deploy da minha aplicação: https://processo-seletivo
 
 
 
+
 <details>
     <summary> <strong> English version </strong> </summary>
 
@@ -547,4 +548,6 @@ This repository presents the flow of atomic commits that I think is ideal: route
 The tests will be carried out using [Sinon](https://sinonjs.org/) e [Chai](https://www.chaijs.com/). </br>
 </details>
 </br>
+
+Check out the deploy here: https://processo-seletivo-xp-ruda.herokuapp.com/ !
 </details>
